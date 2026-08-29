@@ -9,9 +9,13 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 
-ROOT = Path(__file__).resolve().parents[2]
-FIG_BENCH = ROOT / 'bibm_benchmark' / 'figures'
-FIG_KD = ROOT / 'bibm_kd' / 'figures'
+ROOT = Path(__file__).resolve().parents[1]
+# This script feeds both BIBM papers, which are released as separate
+# repositories. Here the NanoSpecies figures are the primary output; the CRF-KD
+# ones (see the companion repository) go to a subdirectory so that the two
+# papers' method_overview.pdf do not overwrite each other.
+FIG_BENCH = ROOT / 'figures'
+FIG_KD = ROOT / 'figures' / 'companion_crf_kd'
 for d in (FIG_BENCH, FIG_KD):
     d.mkdir(parents=True, exist_ok=True)
 

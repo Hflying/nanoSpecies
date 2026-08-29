@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Per-isolate cross-species spread figure for NanoSpecies-50 (Bonito sup)."""
 import csv, statistics
+from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-CSV = "/home/ubuntu/hardy/M2Caller/logs/bonito_sup_all.csv"
+ROOT = Path(__file__).resolve().parents[1]
+CSV = ROOT / "logs" / "bonito_sup_all.csv"
 rows = list(csv.DictReader(open(CSV)))
 
 # group by genus
@@ -41,5 +43,5 @@ ax.set_xlim(86, 96)
 ax.grid(True, axis="x", ls=":", alpha=0.4)
 ax.legend(fontsize=7, loc="lower right")
 fig.tight_layout(pad=0.3)
-fig.savefig("spread.pdf", bbox_inches="tight")
+fig.savefig(ROOT / "figures" / "spread.pdf", bbox_inches="tight")
 print("wrote spread.pdf; overall median=%.2f" % overall)

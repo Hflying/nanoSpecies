@@ -104,6 +104,17 @@ python figures/make_spread.py
 the tables, statistics and figures can be regenerated without any GPU or access
 to the corpus.
 
+`make_figures.py` is shared with the companion distillation paper: it writes this
+paper's figures to `figures/` and the CRF-KD ones to
+`figures/companion_crf_kd/` (untracked).
+
+The shell drivers under `scripts/` call `${PY:-python3}`, so point `PY` at the
+interpreter you want:
+
+```bash
+PY=/path/to/venv/bin/python bash scripts/phase2/eval_dorado_sup_all.sh
+```
+
 ## Scoring a new checkpoint
 
 The harness loads the checkpoint, runs the deterministic read-selection protocol

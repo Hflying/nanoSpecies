@@ -9,3 +9,6 @@ venv/
 tools/
 data/
 *.fast5
+
+# generated companion-paper figures (see figures/make_figures.py)
+figures/companion_*/
