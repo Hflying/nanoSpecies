@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv*/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# vendor checkpoints and corpus are not redistributed (see README)
+tools/
+data/
+*.fast5
